@@ -14,3 +14,5 @@ jobs:
               uses:  actions/setup-node@v4  # "uses" is used to tell which github action is used"
               with:
                 node-version: '21'
+            - name:  "Check node version"
+              run: node --version
