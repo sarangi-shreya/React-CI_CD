@@ -1,18 +1,23 @@
-name: "Sample React CI Pipeline/workflow"
+name: "Sample React CI Pipeline/workflow"  # name of the pipeline
 
-on:
+on:              # event
     push:
         branches:
             - main
             - master
 jobs:
-    build-and-test:
+    build-and-test:      #job name
         runs-on: ubuntu-latest
         
         steps:
-            - name: "Setup Node JS"
+            - name: "Setup Node JS"     # step1
               uses:  actions/setup-node@v4  # "uses" is used to tell which github action is used"
               with:
                 node-version: '21'
-            - name:  "Check node version"
-              run: node --version
+            - name:  "Check node version"   # step 2
+              run: node --version           # basic linux command
+              
+            - name: "Clone the repository"
+              uses: actions/checkout@v2  
+              # or run: git clone repository_name
+              
