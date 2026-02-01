@@ -11,9 +11,9 @@ jobs:
         
         steps:
             - name: "Setup Node JS"     # step1
-              uses: actions/setup-node@v4
+              uses:  actions/setup-node@v4  # "uses" is used to tell which github action is used"
               with:
-                node-version: '20'
+                node-version: '21'
             - name:  "Check node version"   # step 2
               run: node --version           # basic linux command
               
@@ -25,7 +25,7 @@ jobs:
               run: ls
 
             - name: "Install dependencies"
-              run: npm ci
+              run: npm install
               
             - name: "List Directories"
               run:  ls 
