@@ -25,10 +25,13 @@ jobs:
               run: ls
 
             - name: "Install dependencies"
-              run: npm install
+              run: npm ci
               
             - name: "List Directories"
               run:  ls 
+
+            - name: "Run Lint"
+              run: npm run lint
 
             - name: "Run Tests"
               run: npm run test
